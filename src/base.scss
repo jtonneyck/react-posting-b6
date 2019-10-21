@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    width: 60vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    
+    input {
+        padding: 12px;
+        height: 24px;
+        width: 100%;
+        font-size: 24px;
+    }
+
+    button {
+        width:100%;
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 36px;
+        box-sizing: border-box;
+    }
+}

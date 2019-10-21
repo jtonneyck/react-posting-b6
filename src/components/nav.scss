@@ -1,0 +1,15 @@
+nav {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+
+    }
+}

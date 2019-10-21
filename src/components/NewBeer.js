@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import "./form.scss"
+
 export default class NewBeer extends Component {
 
     constructor(props){
@@ -27,7 +27,7 @@ export default class NewBeer extends Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault(); // prevent the default behaviour of the form. Being: redirecting to another route
+        e.preventDefault(); // prevent the default behaviour of the form, being redirecting to another route
         axios({
             url: "https://ih-beers-api.herokuapp.com/beers/new",
             data: this.state,
@@ -35,6 +35,7 @@ export default class NewBeer extends Component {
         })
         .then((response)=> {
             debugger
+            this.props.history.push(`/beer-detail/${response.data._id}`)
         })
         .catch((error)=> {
             debugger
@@ -53,7 +54,7 @@ export default class NewBeer extends Component {
                     <input onChange={this.handleChange} value={this.state.brewers_tips} placeholder="brewers_tip" type="text" name="brewers_tips"/>
                     <input onChange={this.handleChange} value={this.state.contributed_by}  placeholder="contributed_by" type="text" name="contributed_by"/>
                     <input onChange={this.handleChange} value={this.state.name} placeholder="name" type="text" name="name"/>
-                    <input onChange={this.handleChange} type="submit"/>
+                    <button onChange={this.handleChange} type="submit">Submit </button>
                 </form>
             </div>
         )
