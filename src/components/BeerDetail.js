@@ -42,6 +42,7 @@ export default class BeerDetail extends Component {
                     <>
                         <h1>{this.state.beer.name}</h1>
                         <p>{this.state.beer.description}</p>
+                        <img src={this.state.beer.image_url} alt=""/>
                     </>
                 }
                 {this.state.error ? 

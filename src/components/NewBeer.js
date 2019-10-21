@@ -39,6 +39,7 @@ export default class NewBeer extends Component {
         })
         .catch((error)=> {
             debugger
+
         })
         
     }
@@ -54,7 +55,7 @@ export default class NewBeer extends Component {
                     <input onChange={this.handleChange} value={this.state.brewers_tips} placeholder="brewers_tip" type="text" name="brewers_tips"/>
                     <input onChange={this.handleChange} value={this.state.contributed_by}  placeholder="contributed_by" type="text" name="contributed_by"/>
                     <input onChange={this.handleChange} value={this.state.name} placeholder="name" type="text" name="name"/>
-                    <button onChange={this.handleChange} type="submit">Submit </button>
+                    <button type="submit">Submit </button>
                 </form>
             </div>
         )
