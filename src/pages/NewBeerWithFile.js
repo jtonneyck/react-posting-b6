@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import Nav from "../components/Nav";
 
 export default class NewBeerWithFile extends Component {
 
@@ -11,6 +12,7 @@ export default class NewBeerWithFile extends Component {
     state = {
         error: ""
     }
+
     handleSubmit(e) {
         e.preventDefault(); // prevent the default behaviour of the form, being redirecting to another route
 
@@ -35,27 +37,30 @@ export default class NewBeerWithFile extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit} ref={this.formRef}> {/* React equivalent of an id  */}
-                    <input placeholder="tagline" type="text" name="tagline"/>
-                    <input placeholder="description"  type="text" name="description"/>
-                    <input placeholder="first_brewed" type="date" name="first_brewed"/>
-                    <input placeholder="attenuation_level" type="number" name="attenuation_level"/>
-                    <input placeholder="brewers_tip" type="text" name="brewers_tips"/>
-                    <input placeholder="contributed_by" type="text" name="contributed_by"/>
-                    <input placeholder="name" type="text" name="name"/>
-                    <label className="custom-file-upload">
-                        <input type="file" name="picture"/>
-                        upload beer picture
-                    </label>
+            <>
+                <Nav />
+                <div>
+                    <form onSubmit={this.handleSubmit} ref={this.formRef}> {/* React equivalent of an id  */}
+                        <input placeholder="tagline" type="text" name="tagline"/>
+                        <input placeholder="description"  type="text" name="description"/>
+                        <input placeholder="first_brewed" type="date" name="first_brewed"/>
+                        <input placeholder="attenuation_level" type="number" name="attenuation_level"/>
+                        <input placeholder="brewers_tip" type="text" name="brewers_tips"/>
+                        <input placeholder="contributed_by" type="text" name="contributed_by"/>
+                        <input placeholder="name" type="text" name="name"/>
+                        <label className="custom-file-upload">
+                            <input type="file" name="picture"/>
+                            upload beer picture
+                        </label>
 
-                    <button type="submit">Submit </button>
-                </form>
-                {this.state.error ? 
-                    <p>{this.state.error}</p>:
-                    ""
-                }
-            </div>
+                        <button type="submit">Submit </button>
+                    </form>
+                    {this.state.error ? 
+                        <p>{this.state.error}</p>:
+                        ""
+                    }
+                </div>
+            </>
         )
     }
 }

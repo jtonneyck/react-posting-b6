@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import Nav from "../components/Nav";
 
 export default class NewBeer extends Component {
 
@@ -46,6 +47,8 @@ export default class NewBeer extends Component {
 
     render() {
         return (
+            <>
+            <Nav />
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} value={this.state.tagline} placeholder="tagline" type="text" name="tagline"/>
@@ -58,6 +61,7 @@ export default class NewBeer extends Component {
                     <button type="submit">Submit </button>
                 </form>
             </div>
+            </>
         )
     }
 }

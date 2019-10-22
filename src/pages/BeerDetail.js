@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import Nav from "../components/Nav";
 
 export default class BeerDetail extends Component {
 
@@ -36,20 +37,23 @@ export default class BeerDetail extends Component {
 
     render() {
         return (
-            <div>
-                {this.state.loading ? 
-                    <img src="/loading.gif" alt=""/>:
-                    <>
-                        <h1>{this.state.beer.name}</h1>
-                        <p>{this.state.beer.description}</p>
-                        <img src={this.state.beer.image_url} alt=""/>
-                    </>
-                }
-                {this.state.error ? 
-                    this.state.error:
-                    ""
-                }
-            </div>
+            <>
+                <Nav />
+                <div>
+                    {this.state.loading ? 
+                        <img src="/loading.gif" alt=""/>:
+                        <>
+                            <h1>{this.state.beer.name}</h1>
+                            <p>{this.state.beer.description}</p>
+                            <img src={this.state.beer.image_url} alt=""/>
+                        </>
+                    }
+                    {this.state.error ? 
+                        this.state.error:
+                        ""
+                    }
+                </div>
+            </>
         )
     }
 }

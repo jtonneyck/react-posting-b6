@@ -9,18 +9,19 @@ import BeerDetail from "./pages/BeerDetail";
 import NewBeer from "./pages/NewBeer";
 import NewBeerWithFile from "./pages/NewBeerWithFile";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Nav />
 
-        <Route exact path="/" component={Home} />
+        <Route exact path={"/(|home)/"} component={Home} />
         <Route exact path="/new-beer" component={NewBeer} />
         <Route exact path="/new-beer-with-file" component={NewBeerWithFile} />
         <Route exact path="/beer-detail/:beerId" component={BeerDetail} />
-        <Route exact path="/login" component={BeerDetail} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
 
       </header>
     </div>
